@@ -115,26 +115,32 @@
     let humanModel;
     
     const loader = new GLTFLoader();
-    const gltf = loader.load('./model/human/body.glb');
-    const model = gltf.scene;
-    humanModel = model;
-    model.position.set(0, 0, 0);
-    model.scale.set(1, 1, 1);
-    model.traverse((child) => {
-        if (child.isMesh) {
-            humanMesh = new THREE.Mesh(child.geometry, fresnelMaterial);
-            scene.add(humanMesh);
-        }
+        loader.load('./model/human/body.glb', (gltf) => {
+            const model = gltf.scene;
+            humanModel = model;
+            model.position.set(0, 0, 0);
+            model.scale.set(1, 1, 1);
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    humanMesh = new THREE.Mesh(child.geometry, fresnelMaterial);
+                    scene.add(humanMesh);
+                }
+            });
+        }, undefined, (error) => {
+        console.error('An error occurred while loading the model:', error);
     });
 
     Models.forEach(model => {
         const loader = new GLTFLoader();
-        let gltf = loader.load(model.model);
-        const modelScene = gltf.scene;
-        modelScene.position.set(0, 0, 0);
-        modelScene.scale.set(1, 1, 1);
-        model.ref = modelScene;
-        scene.add(modelScene);
+        loader.load(model.model, (gltf) => {
+            const modelScene = gltf.scene;
+            modelScene.position.set(0, 0, 0);
+            modelScene.scale.set(1, 1, 1);
+            model.ref = modelScene;
+            scene.add(modelScene);
+        }, undefined, (error) => {
+            console.error('An error occurred while loading the model:', error);
+        });
     })
 
     
