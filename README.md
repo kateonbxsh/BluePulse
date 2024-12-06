@@ -9,7 +9,11 @@ Découvrez notre projet ambitieux, **Blue Pulse**, une série de défis technolo
 ## **Défi National : [Blue Pulse - Défi National](https://kateonbxsh.github.io/BluePulse/) ([Source](https://github.com/kateonbxsh/BluePulse/blob/main/index.html))**
 
 Ce défi met en avant une **visualisation interactive d'organes en 3D**, réalisée avec la bibliothèque **Three.js**.  
-- **Mode d'emploi :**  
+- **Réalisation :**  
+  - **Modélisation et texturage** : Tous les organes ont été modélisés et texturés sous Blender, avec soin pour offrir une expérience visuelle immersive.  
+  - **Shader personnalisé** : Nous avons conçu le shader de l'océan de A à Z, pour un rendu unique et dynamique.  
+  - **Caméra 3D et animations** : La caméra et les animations ont été entièrement programmées pour permettre une exploration fluide et intuitive.  
+- **Fonctionnalités :**  
   - Laissez la page se charger (cela peut prendre un peu de temps).  
   - Explorez le modèle en 3D en déplaçant la caméra.  
   - Cliquez sur les organes pour découvrir leurs informations.  
