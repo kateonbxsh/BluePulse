@@ -248,23 +248,23 @@
       const CINEMATIC_RATE = 0.008;
       if (humanReady && envReady && Models.every(model => model.ready)) {
         cinematicBlend = lerp(cinematicBlend, 1, CINEMATIC_RATE);
+        cinematicEnded = (cinematicBlend > 0.999)
+        if (!cinematicEnded) {
+            camera.position.lerp(cameraTarget, CINEMATIC_RATE);
+        }
+        if (cinematicBlend > 0.95 && renderer.domElement.classList.contains("blurred")) {
+            canvas.classList.remove('blurred');
+            document.getElementById("title").classList.add("titlesmall");
+            document.getElementById("overlay").classList.add("overlaysmall");
+            document.getElementById("desc").classList.add("descvisible");
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.3;
+            controls.enableRotate = true;
+        }
+        controls.target.lerp(controlsTarget, 0.05);
+        camera.fov = lerp(camera.fov, controlsTargetZoom * FOV, 0.05);
+        camera.updateProjectionMatrix();
       }
-      cinematicEnded = (cinematicBlend > 0.999)
-      if (!cinematicEnded) {
-        camera.position.lerp(cameraTarget, CINEMATIC_RATE);
-      }
-      if (cinematicBlend > 0.95 && renderer.domElement.classList.contains("blurred")) {
-        canvas.classList.remove('blurred');
-        document.getElementById("title").classList.add("titlesmall");
-        document.getElementById("overlay").classList.add("overlaysmall");
-        document.getElementById("desc").classList.add("descvisible");
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.3;
-        controls.enableRotate = true;
-      }
-      controls.target.lerp(controlsTarget, 0.05);
-      camera.fov = lerp(camera.fov, controlsTargetZoom * FOV, 0.05);
-      camera.updateProjectionMatrix();
       requestAnimationFrame(animate);
     }
 
@@ -335,7 +335,7 @@
                 if (j >= model.desc.length) return clearInterval(currentDescInterval);
                 document.getElementById("organfulldesc").textContent += model.desc[j++];
             }, 40);
-        } else if (selectedModel == hoveredModel) {
+        } else if (selectedModel == hoveredModel || (hoveredModel == -1 && selectedModel != -1 && selectedModel != -2)) {
             selectedModel = -1;
             hoveredModel = -1;
             controlsTargetZoom = 1;
