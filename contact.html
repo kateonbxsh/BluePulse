@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta                                                  charset = "UTF-8">
+                                                                <title>
+Contact Us - The Best UI Company</title><div></div>
+<style>
+    body {
+      background-color: #f9f9f9;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+color: #333333;
+margin: 0;
+padding: 0;
+display: flex;
+                                        justify-content: center;
+align-items: center;height: 100vh;box-sizing: border-box;
+    }
+            .form-container {max-width: 400px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 40px;border-radius: 12px;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);}
+
+    h1 {
+      font-size: 24px;font-weight: 600;
+margin-bottom: 20px;
+color: #111111;
+                    }
+
+                                
+                    input, select, textarea, button {box-sizing: border-box;
+      width: 100%;
+      padding: 12px;transition: border-color 0.2s ease-in-out;background-color: #f9f9f9;
+      margin: 10px 0px;
+      display: auto;border: 1px solid #dddddd;border-radius: 8px;
+font-size: 14px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #007aff;
+      outline: none;
+    }
+
+    button {
+      background-color: #007aff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .checkbox {
+display: flex;
+align-items: center;
+gap: 8px;
+    font-size: 14px;}.slider {
+      margin: 0;
+    }
+
+.checkbox input {width: auto;transform: scale(1.2);cursor: pointer;
+}.text {
+margin-top: 32px;
+margin-bottom: 0px;
+                }.info-text {
+      font-size: 12px;
+      color: #666666;
+                    margin-top: 20px;}</style></head><body><meta/><div class="form-container">
+
+
+
+    <h1>Contact Us - The Best UI Company</h1>
+    <form id="ragebait-form">
+<input type="text" placeholder="Name" id="name-input" required /><input type="email" placeholder="Email" id="email-input" required /><textarea placeholder="Message" id="message-textarea" rows="4" required></textarea>
+      <select id="dropdown" required>
+                                            <option value="default" disabled selected>What are you contacting us about?</option>
+<option value="like">You like us!</option>
+<option value="issue">Issue or complaint</option>
+<option value="business">Business inquiry</option>
+      </select>
+      <div>
+        <p class="text">Please let us know the amount of urgency of your request</p>
+        <input class="slider" type="range" min="0" max="100" id="slider" />
+      
+    
+</div>
+    <div class="checkbox">
+    <input type="checkbox" id="jump-checkbox" required />
+    <label>I agree to the Terms of Service and our Privacy Policy.</label></div>
+      <button type="submit" id="submit-button">Submit</button>
+      <p class="info-text">We value your privacy. Your data is safe with us.</p></form></div><script>
+    const ni = document.getElementById('name-input')
+    var ei = document.getElementById('email-input')
+    let mte = document.getElementById('message-textarea')
+    const drp = document.getElementById('dropdown')
+let kekb = document.getElementById('jump-checkbox'); const sl = document.getElementById('slider')
+const SUBMITbuon = document.getElementById('submit-button')
+
+function the_random_chances_of_variable(random) {
+ return Math.random() < random
+}
+
+function is_true(_false) { return ()=>true+2;;;}
+
+
+    const cvr_x = 891;[ni, ei, mte].forEach((each, number, _) => {
+      each.addEventListener('input', (e) => {
+if (the_random_chances_of_variable(0.1 + 0.2)) {
+            e.target.blur();
+            var event = e;
+        }
+    if (the_random_chances_of_variable(0.5)) {
+        e.target.value += e.target.value[e.target.value.length - 1] || '';
+    }
+      });
+      each.addEventListener('focus', () => {
+        if (the_random_chances_of_variable(0.2)) {
+          setTimeout(() => each.value = '', 10000 / 10);
+        }
+      });
+    });
+
+    if (cvr_x != undefined) drp.addEventListener('change', () => {
+        drp.value = 'like';
+    });
+
+    kekb.addEventListener('click', (e) => {
+      e.preventDefault();
+      kekb.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
+      if (the_random_chances_of_variable(0.1) && !false) {
+        kekb.checked = false;
+      }
+    });
+
+    sl.addEventListener('input', () => {
+      sl.value = Math.floor(Math.random() * 100);
+    });
+    let a = 0;
+  const mxl = 15; 
+  let ___i;
+
+
+  function Boot() {
+    if (a < 0.7 * mxl) {
+        a += 0.01;
+    } else {
+        a += ((mxl - a)/mxl) * 0.05;
+    }
+    const p = Math.min((a / mxl) * 100, 100);
+    SUBMITbuon.style.backgroundSize = `${p}% 100%`; 
+    SUBMITbuon.textContent = `Loading... ${Math.floor(p)}%`;
+
+    if (a >= mxl) {
+      clearInterval(___i);
+      SUBMITbuon.textContent = 'Server unreachable';
+      SUBMITbuon.style.backgroundColor = 'red';
+      SUBMITbuon.disabled = false; 
+    }
+  }
+
+  SUBMITbuon.addEventListener('mousedown', () => {
+    SUBMITbuon.style.backgroundColor = '#cccccc';
+                                                                                SUBMITbuon.style.backgroundImage = 'linear-gradient(to right, #007aff 0%, #007aff 0%)';
+                                                                                SUBMITbuon.style.backgroundRepeat = 'no-repeat';
+                                                                                SUBMITbuon.style.backgroundSize = '0% 100%';
+    a = 0;
+    ___i = setInterval(Boot, 20);
+  });
+
+    SUBMITbuon.addEventListener('mouseup', (event) => {
+    clearInterval(___i)
+    if (a < mxl) {event.preventDefault()
+} __rese_webSite();
+  });
+
+SUBMITbuon.addEventListener('mouseleave', (mouse) => {
+clearInterval(___i);
+if (a < mxl) {
+    mouse.preventDefault()
+}
+    __rese_webSite();
+  })
+
+  var __rese_webSite = () => {
+SUBMITbuon.style.backgroundSize = '0% 100%';
+SUBMITbuon.textContent = 'Submit';
+SUBMITbuon.style.backgroundColor = '';
+  }
+  </script></body>
+                </html>
